@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
+    crossorigin="anonymous" />
+    <title>Weather app </title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        .centerbody {
+        text-align: center;
+        padding: 1%;
+        vertical-align: top;
+         background: #3a5f8c;
+        border-radius: 4px;
+        box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+        {#border: 3px solid green;#}
+        {#border-bottom: none;#}
+        {#margin-bottom: 10%;#}
+        }
+        .card-body{
+        margin-top: 1%;
+        text-align: center;
+        {#border: 3px solid green;#}
+        {#border-radius: 10px;#}
+        {#background-color: whitesmoke;#}
+        {#padding: 0 0 20px;#}
+        padding: 1%;
+        vertical-align: top;
+            background: #3a5f8c;
+        border-radius: 4px;
+        box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+        }
+        h1{
+            border:  black;
+            box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+            background: whitesmoke;
+            border-radius: 4px;
+            padding: 1%;
+        }
+        h2{
+            border:  black;
+            box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+            background: whitesmoke;
+            border-radius: 4px;
+            padding: 1%;
+        }
+        .pha{
+            border:  black;
+            box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+            background: whitesmoke;
+            border-radius: 4px;
+            padding: 1%;
+        }
+        .SButton::before {
+  content: "";
+  display: inline-block;
+  height: auto;
+  width: auto;
+  background-color: #1a1f36;
+  /*padding: 1%;*/
+  margin: 0 auto 4% 1%;
+}
+.SButton {
+  height: 27px;
+  width: 80px;
+  margin-left: 1%;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: black;
+  background-color: whitesmoke;
+  border: solid black;
+}
+.SButton:hover {
+  font-weight: 15;
+  background-color: #1a1f36;
+  color: whitesmoke;
+}
+
+    </style>
+</head>
+<body>
+    <div class="centerbody">
+        <h1>Welcome to Application</h1>
+        <div class="pha">
+        <p> Weather App </p>
+        <p>Using Python Language and Django Framework</p>
+        <img src="../../static/images/weather.png" alt="Image not working " style="width:100px; height: auto; margin-bottom:50px; ">
+        </div>
+            <form method="post" class="form" style="margin-top: 2%">
+            {% csrf_token %}
+
+            <input type="text" class="form-control" name="city" placeholder="Choose Your City ..." style="width: 80%">
+
+            <div class="Sabutton" style="margin-top: 1%">
+            <button type="submit" class="SButton">Search</button>
+             </div>
+        </form>
+    </div>
+      <div class="card-body">
+          <br>
+          <h2 style="margin-left: 1%; margin-right: 1%; margin-bottom: 1%"> City Entered : {{condition}}</h2>
+          <div class="pha" style="margin-left: 1%; margin-right: 1%; margin-bottom: 1%">
+
+        <h3> Country Code : {{country_code}}</h3>
+        <h3> Coordinates [X,Y] : {{coordinate}}</h3>
+        <h3> Temperature in Celsius : {{temp}}</h3>
+        <h3> Pressure : {{pressure}} </h3>
+        <h3> Humidity : {{humidity}}</h3>
+          <h3> Forecast : {{main}}</h3>
+            <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="Image" style="width:70px"></h4>
+        <h3> Description : {{description}}</h3>
+          <br>
+              </div>
+          .
+      </div>
+    </div>
+</body>
+</html>
